@@ -1,0 +1,40 @@
+import random
+numero = random.randint(0, 20)
+acertou = False
+max_tentativas = 5
+
+
+print("Acerte o número e ganhe... nada :D ")
+
+while max_tentativas > 0:
+     
+     print(f"\n Você tem {max_tentativas} tentativas. ")
+     try:
+         tentativas = int(input("\n Digite o seu número: "))
+     except ValueError:
+        print("\n Por favor usar somente números")
+        continue
+        
+     
+     max_tentativas -= 1
+     if tentativas == numero:
+         acerto = True
+         print("\n Perabéns, você acertou o número. ")
+         break
+     elif tentativas < numero:
+         print("\n Tente um número maior. ")
+     elif tentativas > numero:
+         print("\n Tente um número menor")
+         
+if acertou == True:
+    print("\n Parabéns você acertou o número ")
+    print(f"Você descobriu o número {numero} e ficou com {max_tentativas} tentativas. ")
+else :
+    print("\n Infelimente acabou suas chances")
+    print(f"\n O número era {numero}")
+
+     
+ 
+        
+        
+    
